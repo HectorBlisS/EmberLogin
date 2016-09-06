@@ -1,0 +1,14 @@
+<nav class="nav">
+	{{#link-to 'juguetes.lista'}}
+	<h2>FixterGeek</h2>
+	{{/link-to}}
+	{{#if session.isAuthenticated}}
+	<img src="{{session.currentUser.photoURL}}">
+	{{#link-to 'login'}}	
+	<span>{{session.currentUser.displayName}}</span>
+	{{/link-to}}
+	{{else}}
+	{{link-to 'Iniciar Sesión' 'login'}}
+	{{/if}}
+</nav>
+{{outlet}}

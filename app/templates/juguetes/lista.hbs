@@ -1,0 +1,19 @@
+<h2>Lista de juguetes</h2>
+
+{{#if session.isAuthenticated}}
+
+
+{{!-- {{#each model as |user|}} --}}
+
+<h2>
+	{{#each model as |juguete|}}
+	<p>{{juguete.nombre}}</p>
+	{{/each}}
+</h2>
+
+{{!-- {{/each}} --}}
+
+
+{{else}}
+{{link-to 'Inicia sesion' 'login'}}
+{{/if}}

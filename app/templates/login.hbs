@@ -1,0 +1,18 @@
+{{#if session.isAuthenticated}}
+<img src="{{session.currentUser.photoURL}}">
+{{session.currentUser.displayName}} <br>
+<button {{action 'logout'}} >Cerrar Sesión</button>
+{{else}}
+
+<form {{action 'signIn' email password on="submit"}}>
+{{input type="email" placeholder="Correo" value=email}} <br>
+{{input type="password" placeholder="Password" value=password}}
+<input type="submit" value="Iniciar Sesión">
+</form>
+
+
+<button {{action 'login' 'google'}} >Iniciar Sesión con Google</button>
+<button {{action 'login' 'facebook'}} >Iniciar Sesión con Facebook</button>
+<button {{action 'login' 'twitter'}} >Iniciar Sesión con Twitter</button>
+<button {{action 'login' 'github'}} >Iniciar Sesión con Github</button>
+{{/if}}
